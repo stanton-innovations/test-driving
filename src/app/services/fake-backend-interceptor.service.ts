@@ -8,16 +8,26 @@ import * as characters from '../api/json/characters.json';
 @Injectable()
 export class FakeBackendInterceptorService implements HttpInterceptor {
 
-  constructor() {
-  }
+  constructor() {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return of(null).pipe(
       mergeMap(() => {
+
         if (request.url.endsWith('/api/characters') && request.method === 'GET') {
           return of(new HttpResponse({status: 200, body: characters}));
         }
-        return [];
+
+        if (request.url.match(/\/api\/characters\/\d+$/) && request.method === 'GET') {
+          // find user by id in users array
+          const urlParts = request.url.split('/');
+          const id = parseInt(urlParts[urlParts.length - 1]);
+          const matchedCharacters = characters.results.filter(item => item.id === id);
+          const character = matchedCharacters.length ? matchedCharacters[0] : null;
+
+          return of(new HttpResponse({ status: 200, body: character }));
+        }
+        return next.handle(request);
       }),
       // tap(data => console.log(data)),
       materialize(),
