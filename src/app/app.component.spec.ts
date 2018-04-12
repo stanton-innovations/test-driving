@@ -1,42 +1,27 @@
-import {TestBed, async, ComponentFixture, fakeAsync, tick, flush} from '@angular/core/testing';
+import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 describe('AppComponent', () => {
-  let fixture: ComponentFixture<AppComponent>;
-  let app: AppComponent;
-  let compiled;
-  beforeEach(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
     }).compileComponents();
-    fixture = TestBed.createComponent(AppComponent);
-    app = fixture.debugElement.componentInstance;
-    fixture.detectChanges();
-    compiled = fixture.debugElement.nativeElement;
-  });
-  // afterAll(async(() => {
-  //   TestBed.resetTestingModule();
-  // }));
-  it('should create the app', () => {
+  }));
+  it('should create the app', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
-  describe('sub', () => {
-    let expected;
-    beforeEach(() => {
-      expected = {test: 'test'};
-    });
-    it('sets data', fakeAsync(() => {
-      app.setTinker(expected).then(() => {
-        expect(app.tinker).toEqual(expected);
-      });
-      tick(1100);
-    }));
-    it(`should have as title 'app'`, fakeAsync(() => {
-      expect(app.title).toEqual('app');
-    }));
-    it('should render title in a h1 tag', () => {
-      expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
-    });
-  });
+  }));
+  it(`should have as title 'app'`, async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.title).toEqual('app');
+  }));
+  it('should render title in a h1 tag', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
+  }));
 });
