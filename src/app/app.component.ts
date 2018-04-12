@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  tinker;
+  setTinker(data: object) {
+    return new Promise((resolve, reject) =>
+      setTimeout(() => resolve(this.tinker = data), 1000)
+    );
+  }
 }
