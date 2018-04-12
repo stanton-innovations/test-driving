@@ -26,5 +26,9 @@ Services
 ```
 #### API
 ```
+list of characters
 /api/characters
+
+character details
+/api/characters/1
 ```
