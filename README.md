@@ -24,3 +24,7 @@ Components
 Services
   Pokemon get from api
 ```
+#### API
+```
+/api/characters
+```
