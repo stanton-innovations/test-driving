@@ -1,6 +1,25 @@
 ## Pokemon Epic
 ```
-Epic: Pokemon Crud Module
+Epic: Pokedex Module
+
+Britton and Soroush
+1. get hypothesis
+2. get fake research + value prop
+3. get mock
+4. write stories
+5. groom stories
+6. do work
+  how we do work
+
+Add stryker
+
+1. test for the service first
+2. fix the service
+3. show json on page
+4. e2e
+style page
+show 1 item from the list
+show all item in the list
 ```
 ### Pokemon Listing Feature
 ```
