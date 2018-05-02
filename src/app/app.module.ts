@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FakeBackendProvider } from './services/fake-backend-interceptor.service';
 import { HttpClientModule } from '@angular/common/http';
-import { TinkerService } from './services/tinker.service';
+import { PokeDataService } from './services/poke-data.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { TinkerService } from './services/tinker.service';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [FakeBackendProvider, TinkerService],
+  providers: [FakeBackendProvider, PokeDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

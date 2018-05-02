@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TinkerService } from './services/tinker.service';
+import { PokeDataService } from './services/poke-data.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { TinkerService } from './services/tinker.service';
 export class AppComponent {
   title = 'app';
 
-  constructor(private tinker: TinkerService) {
+  constructor(private tinker: PokeDataService) {
     this.tinker.get();
   }
 }
