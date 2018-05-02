@@ -4,5 +4,6 @@
 2. [Design](exercises/design.md)
 3. [Writing Stores](exercises/story-time.md)
 4. [Development](exercises/development.md)
+5. [Delivery](exercises/delivery.md)
 
 
