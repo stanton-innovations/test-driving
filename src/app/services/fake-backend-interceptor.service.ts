@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { delay, dematerialize, materialize, mergeMap, tap } from 'rxjs/internal/operators';
+import { delay, dematerialize, materialize, mergeMap } from 'rxjs/internal/operators';
 
 import { Pokemon } from '../api/json';
 
